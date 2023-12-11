@@ -1,0 +1,16 @@
+.container {
+  border-radius: 25px;
+  background-color: whitesmoke;
+  max-height: 500px;
+  overflow-y: auto;
+  margin-top: -20px;
+  width: 400px;
+}
+
+.container::-webkit-scrollbar {
+  width: 0;
+}
+
+.container {
+  -ms-overflow-style: none;
+}

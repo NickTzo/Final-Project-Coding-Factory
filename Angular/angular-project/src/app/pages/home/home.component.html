@@ -1,0 +1,29 @@
+<div class="centered-container">
+  <div class="container" layout="column" layout-align="center end">
+    <form [formGroup]="form" class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Choose your DREAM car</mat-label>
+        <input matInput placeholder="Choose Car" type="text" formControlName="brand">
+      </mat-form-field>
+      <div>
+        <mat-form-field>
+          <mat-label>Starting Date</mat-label>
+          <input matInput [matDatepicker]="startDate" formControlName="startDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
+          <mat-datepicker #startDate></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Ending Date</mat-label>
+          <input matInput [matDatepicker]="endDate" formControlName="endDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="endDate"></mat-datepicker-toggle>
+          <mat-datepicker #endDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-raised-button class="btn" type="submit" (click)="onSearch()">Search</button>
+      </div>
+    </form>
+  </div>
+</div>

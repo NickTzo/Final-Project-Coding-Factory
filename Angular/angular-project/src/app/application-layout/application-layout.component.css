@@ -1,0 +1,39 @@
+.toolbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.container {
+  padding: 50px;
+}
+
+.left-content {
+  margin-left: 10px;
+  font-size: x-large;
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+}
+
+.right-content a,
+.right-content button {
+  margin-left: 10px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: whitesmoke;
+}

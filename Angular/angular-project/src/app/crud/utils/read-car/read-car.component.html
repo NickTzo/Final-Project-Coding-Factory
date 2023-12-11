@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card class="centered">
+    <mat-card-header class="header">
+      <mat-card-title>{{carData.brand}}</mat-card-title>
+    </mat-card-header>
+    <div class="container-img">
+      <img mat-card-image class="img" [src]="carData.photoUrl"
+        onerror="this.onerror=null; this.src='../assets/no-image.jpg'" />
+      <mat-card-content class="card-content">
+        <div class="details">
+          <p>Model: {{ carData.model }}</p>
+          <p>Year: {{ carData.year }}</p>
+          <p>Price Per Day: {{ carData.price }}</p>
+          <p>Transmission: {{ carData.transmission }}</p>
+          <p>Seats: {{ carData.seat }}</p>
+          <p>CC: {{ carData.cc }}</p>
+        </div>
+      </mat-card-content>
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" class="btn" (click)="onBooked()">Book Now</button>
+    </mat-card-actions>
+  </mat-card>

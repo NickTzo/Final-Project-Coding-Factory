@@ -1,0 +1,33 @@
+<mat-card class="container">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-subtitle>List of My Reservations</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.id }}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Starting Date</th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.startDate }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="endDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ending Date</th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.endDate }}</td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="getData(row)"></tr>
+    </table>
+  </mat-card-content>
+  <mat-error *ngIf="errorMessage" class="error">
+    <mat-card-content class="fx-flex-align--center">Reservations Not Found!</mat-card-content>
+  </mat-error>
+</mat-card>

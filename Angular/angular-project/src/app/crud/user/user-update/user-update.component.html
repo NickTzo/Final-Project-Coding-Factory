@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="centered-container">
+    <form [formGroup]="form" class="fx-layout-column">
+      <mat-form-field>
+        <mat-label>Id</mat-label>
+        <input matInput type="text" formControlName="id" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput type="text" formControlName="username" readonly />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Firstname</mat-label>
+        <input matInput type="text" formControlName="firstname" />
+        <mat-error *ngIf="form.controls.firstname.invalid && form.controls.firstname.touched">
+          Firstname is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Lastname</mat-label>
+        <input matInput type="text" formControlName="lastname" />
+        <mat-error *ngIf="form.controls.lastname.invalid && form.controls.lastname.touched">
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+        <mat-error *ngIf="form.controls.email.invalid && form.controls.email.touched">
+          Please enter a valid email.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input matInput type="text" formControlName="phone" />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" (click)="onUpdate()">Update</button>
+    </form>
+    <mat-error *ngIf="errorMessage" class="error">
+      <mat-card-content class="fx-flex-align--center">Please try again later!</mat-card-content>
+    </mat-error>
+  </div>
+
+</div>

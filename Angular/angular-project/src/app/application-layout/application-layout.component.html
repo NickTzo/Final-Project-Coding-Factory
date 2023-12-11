@@ -1,0 +1,30 @@
+<mat-toolbar class="toolbar-container">
+  <span class="left-content">Booking App</span>
+  <span class="spacer"></span>
+  <div class="right-content">
+    <a mat-button routerLink=""><mat-icon>home</mat-icon>Home</a>
+    <a mat-button routerLink="aboutUs"><mat-icon>phone</mat-icon>About App</a>
+    <a mat-button href="https://localhost:7094/swagger/index.html"><mat-icon>help</mat-icon>Swagger</a>
+    <span class="spacer"></span>
+    <button mat-icon-button *ngIf="!(isLoggedIn$ | async)" mat-icon-button routerLink="login">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <button *ngIf="isLoggedIn$ | async" mat-button [matMenuTriggerFor]="menu">
+      {{ fullname$ | async }}
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="crud/car/read"><mat-icon>directions_car</mat-icon>My Cars</button>
+      <button mat-menu-item routerLink="crud/reservation/read"><mat-icon>book_online</mat-icon>My Reservations</button>
+      <button mat-menu-item routerLink="crud/user/read"><mat-icon>manage_accounts</mat-icon>My Profile</button>
+      <button mat-menu-item (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<mat-toolbar class="footer">
+  <footer>
+    <span>&copy; 2023 Booking App </span>
+  </footer>
+</mat-toolbar>

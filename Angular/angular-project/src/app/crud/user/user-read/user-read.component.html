@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="centered-container">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>My Profile</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>username: {{ user.username }}</p>
+        <p>firstname: {{ user.firstname }}</p>
+        <p>lastname: {{ user.lastname }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Phone: {{ user.phone }}</p>
+        <button mat-raised-button color="primary" routerLink="/crud/user/update">Update User</button>
+        <button mat-raised-button color="warn" routerLink="/crud/user/delete">Delete User</button>
+      </mat-card-content>
+      <mat-error *ngIf="errorMessage" class="error">
+        <mat-card-content class="fx-flex-align--center">User Not Found! Check Your Internet
+          Connection!</mat-card-content>
+      </mat-error>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.container {
+  padding: 30px 20px 20px 20px;
+  background-color: white;
+  height: 250px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+
+.link {
+  padding: 10px 20px;
+  margin: 20px;
+  text-decoration: none;
+  color: black;
+}

@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.centered {
+  text-align: center;
+  padding: 20px;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.container-img {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.left-section {
+  margin-right: 20px;
+}
+
+.img {
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.details {
+  text-align: left;
+  margin: 20px;
+}
+
+.btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}

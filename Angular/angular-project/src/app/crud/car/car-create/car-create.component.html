@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="centered-container">
+    <form [formGroup]="form" class="fx-layout-column">
+      <mat-form-field>
+        <mat-label>Brand</mat-label>
+        <input matInput type="text" formControlName="brand" />
+        <mat-error *ngIf="form.controls.brand.invalid && form.controls.brand.touched">
+          Brand is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Model</mat-label>
+        <input matInput type="text" formControlName="model" />
+        <mat-error *ngIf="form.controls.model.invalid && form.controls.model.touched">
+          Model is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Year</mat-label>
+        <input matInput type="text" formControlName="year" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Seats</mat-label>
+        <input matInput type="text" formControlName="seat" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Cc</mat-label>
+        <input matInput type="text" formControlName="cc" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Transmission</mat-label>
+        <input matInput type="text" formControlName="transmission" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Price</mat-label>
+        <input matInput type="text" formControlName="price" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>userId</mat-label>
+        <input matInput type="number" formControlName="userId" readonly="true" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>isVisible</mat-label>
+        <input matInput type="text" formControlName="isVisible" readonly="true" />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="onUpload()">Upload
+      </button>
+    </form>
+
+
+    <mat-label>Photo</mat-label>
+    <input type="file" (change)="onFileSelected($event)" />
+
+
+    <div *ngIf="imageSrc">
+      <img [src]="imageSrc.toString()" alt="Selected Image" style="max-width: 300px; max-height: 300px;" />
+    </div>
+    <mat-error *ngIf="errorMessage" class="error">
+      <mat-card-content class="fx-flex-align--center">Problem with the server try again later!</mat-card-content>
+    </mat-error>
+  </div>
+</div>

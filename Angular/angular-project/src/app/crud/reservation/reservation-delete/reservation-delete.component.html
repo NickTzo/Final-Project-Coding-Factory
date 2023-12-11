@@ -1,0 +1,20 @@
+<div class="container card text-white bg-danger mb-3" style="max-width: 18 rem">
+  <div class="centered-container">
+    <div class="card-header">{{ header }}</div>
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ title }}
+      </h5>
+      <p class="card-text">
+        {{ body }}
+      </p>
+      <div class="d-flex flex-row gap-2">
+        <button mat-raised-button color="primary" (click)="onClick(true)" class="btn btn-secondary">Yes</button>
+        <button mat-raised-button color="warn" (click)="onClick(false)" class="btn btn-primary">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-error *ngIf="errorMessage" class="error">
+  <mat-card-content class="fx-flex-align--center">Something gone wrong please try again!</mat-card-content>
+</mat-error>

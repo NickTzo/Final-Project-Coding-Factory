@@ -1,0 +1,38 @@
+<div class="container">
+  <mat-card class="centered">
+    <mat-card-header>
+      <mat-card-title> Login </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form style="max-width: 400px" [formGroup]="form" class="fx-layout-column">
+        <mat-form-field>
+          <mat-label> User name </mat-label>
+          <input matInput type="text" formControlName="username" />
+          <mat-error *ngIf="
+            form.controls.username.invalid && form.controls.username.touched
+          ">Username is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label> Password </mat-label>
+          <input matInput type="password" formControlName="password" />
+          <mat-error *ngIf="
+            form.controls.password.invalid && form.controls.password.touched
+          ">Username is required</mat-error>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="onLogin()">
+          Login
+        </button>
+      </form>
+      <span>You dont have an Account
+        <a color="primary" routerLink="/login/register">
+          Register Now
+        </a>
+      </span>
+    </mat-card-content>
+    <mat-error *ngIf="errorMessage" class="error">
+      <mat-card-content class="fx-flex-align--center">Username or Password
+        invalid!</mat-card-content>
+    </mat-error>
+  </mat-card>
+</div>

@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.centered-container {
+  border-radius: 25px;
+  text-align: center;
+  padding: 20px;
+  background-color: whitesmoke;
+  width: 500px;
+}

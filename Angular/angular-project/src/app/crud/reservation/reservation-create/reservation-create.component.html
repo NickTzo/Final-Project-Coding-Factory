@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="centered-container">
+    <form [formGroup]="form" class="fx-layout-column">
+      <mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Starting Date</mat-label>
+          <input matInput type="text" formControlName="startDate" readonly />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Ending Date</mat-label>
+          <input matInput type="text" formControlName="endDate" readonly />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Price Per Day</mat-label>
+          <input matInput type="text" formControlName="price" readonly />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Book Now
+        </button>
+      </mat-form-field>
+    </form>
+    <mat-error *ngIf="errorMessage" class="error">
+      <mat-card-content class="fx-flex-align--center">Something gone wrong the booked is not
+        comfirmed!</mat-card-content>
+    </mat-error>
+  </div>
+</div>
